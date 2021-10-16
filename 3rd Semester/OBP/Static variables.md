@@ -1,0 +1,1 @@
+Static variables are lazy-loaded, they are only loaded into memory when the class is 1st referenced by using the default classloaders.

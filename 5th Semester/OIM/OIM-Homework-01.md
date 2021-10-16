@@ -1,0 +1,11 @@
+- Naziv: Katal Media d.o.o.
+- Poduzeće je d.o.o. u vlasništvu Zorice Čabraja
+- Ljudi:
+	- Poduzeće vodi Jozo Čabraja, koji vodi odnose između klijenata, polovično je zadužen za vođenje računa i organizaciju u poduzeću.
+	- Vođa IT i Video sektora u firmi je Luka Čabraja.
+- Poduzeće je smješteno na Trgu Ivana Kukuljevića, to joj je jedina lokacija.
+- Poslovanje je započelo 2002. godine kao Katal d.o.o. te se bavila tiskom i dizajnom sa oko 300tinjak klijenata pri vrhuncu. Nakon ekonomske krize 2008. se restrukturirala kao Katal Media d.o.o. te je promijenila način poslovanja, radeći ekskluzivno za 2-3 velika klijenta, što je smanjilo prekovremene radne sate i povećalo profite, omogućivši rastu poduzeća. Poduzeće je dugo vremena bilo orijentirana isključivo prema dizajnu i printu, te se u zadnjih par godina proširilia i u snimanje i u prijenose uživo. Razlikuje se od drugih sličnih poduzeća sa razinom pažnje prema detaljima, i po količini truda uloženom prema kvalitetnom proizvodu.
+- Poduzeće ostaje u poslovanju sa svojim klijentima radi dobrog odnosa stečenog kroz godine i radi činjenice da ne postoji zamjena za nju u velikom dijelu njezinih operacija.
+- Tvrtka proizvodi dizajn, print (pretežito branding za događaje poput sportskih turnira), web dizajn, it usluge, usluge snimanja i live prijenosa, animacije
+- Ispod 10 stalnih zaposlenika, 2-5 velika klijenta, ovisno o godini.
+- 
