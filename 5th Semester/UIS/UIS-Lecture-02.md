@@ -11,5 +11,15 @@ Primjer sustava na primjeru Visokog Učilišta Algebra
 3. Informatički sustav
 ### Primjer Taxi tvrtka
 1. Sustav
+	- Klijenti
+	- Vozači
+	- Vozila
+	- Aplikacija
 2. Proces
-3. Informatički sustav
+	1. Naručeno vozilo preko aplikacije
+	2. Čekanje
+	3. Vozač prihvati
+	4. Prijevoz
+	5. Plaćanje
+	6. Ocijenjivanje
+1. Informatički sustav
