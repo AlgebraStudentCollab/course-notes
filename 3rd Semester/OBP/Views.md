@@ -1,5 +1,5 @@
 tags: [[algebra]] [[OBP Index]] 
-## [[Views]]
+## [[3rd Semester/OBP/Views]]
 A view is like a select stored into a table as a pointer. No data is stored in a view.
 It behaves like any other table, it can insert and delete columns, if c
 ###### _Syntax:_

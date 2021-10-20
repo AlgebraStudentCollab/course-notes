@@ -18,4 +18,4 @@ tags: #semester3, #database
 
 ## Tables
 - [[Tables]]
-- [[Views]]
+- [[3rd Semester/OBP/Views]]
