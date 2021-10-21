@@ -1,19 +1,23 @@
-## Double checked locking
-### Most correct solution
-Now the instance is marked as [[Volatile|volatile]], meaning that it is always 
-```java
-private static volatile Elvis instance;
+### Enum solution
 
-    public static Elvis getInstance() {
-        if (instance == null) {
-            synchronized (Elvis.class) {
-                if (instance == null) {
-                    instance = new Elvis();
-                }
-            }
-        }
-        return instance;
-    }
+
+### Most correct solution with a class
+Now the instance is marked as [[Volatile|volatile]], meaning that any changes to the instance are shared between threads.
+```java
+public class Elvis implements Serializable {
+	private static volatile Elvis instance;
+
+		public static Elvis getInstance() {
+			if (instance == null) {
+				synchronized (Elvis.class) {
+					if (instance == null) {
+						instance = new Elvis();
+					}
+				}
+			}
+			return instance;
+		}
+	}
 ```
 
 ### Almost correct solution
@@ -49,7 +53,8 @@ private static Elvis instance;
 ```
 
 ### Bad thread safety
-Multiple threads can get in througgh the first if and request an instance sequentially
+The [[Synchronized|synchronized]] expression stops multiple threads from accessing a section of code simoultaneously.
+Multiple threads can get in through the first if and request an instance sequentially.
 ```java
 private static Elvis instance;
 
