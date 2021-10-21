@@ -30,6 +30,7 @@ private static Elvis instance;
     }
 ```
 
+
 ```java
 private static Elvis instance;
 
@@ -43,6 +44,8 @@ private static Elvis instance;
     }
 ```
 
+### Bad thread safety
+Multiple threads can get in througgh the first if and request an instance sequentially
 ```java
 private static Elvis instance;
 
@@ -56,6 +59,7 @@ private static Elvis instance;
     }
 ```
 
+No thread safety
 ```java
 public static Elvis getInstance() {
         if (instance == null) {
