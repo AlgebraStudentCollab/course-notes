@@ -5,4 +5,6 @@ buildFeatures() {
 }
 ```
 
+Gradle generates 
+
 .java -> .class -> .dex
