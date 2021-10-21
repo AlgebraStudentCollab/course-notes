@@ -1,5 +1,6 @@
 ## Double checked locking
-Most correct solution
+### Most correct solution
+Now the instance is marked as [[Volatile|volatile]], meaning that it is always 
 ```java
 private static volatile Elvis instance;
 
@@ -15,6 +16,8 @@ private static volatile Elvis instance;
     }
 ```
 
+### Almost correct solution
+A compromise between thread safety and performance, except if the instance is left in an inopportune state due to a previous thread
 ```java
 private static Elvis instance;
 
@@ -30,7 +33,8 @@ private static Elvis instance;
     }
 ```
 
-
+### Slow thread safety
+Thread safety is achieved, but now every request for the instance is much slower
 ```java
 private static Elvis instance;
 
