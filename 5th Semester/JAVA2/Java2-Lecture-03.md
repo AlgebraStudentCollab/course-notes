@@ -23,7 +23,7 @@ The JVM can call private methods on any class.
 
 ##### Serialization
 During serialization the private method `writeObject` is accessed through reflection if it exists.
-The `Serializable` interface is a *Marker* and *Mixin* interface.
+The `Serializable` interface is a [[#Marker interfaces|marker]] and [[#Mixin interface|mixin]] interface.
 It is recommended to use the `.ser` extension.
 Implementing the interface complicates development, and should not be taken lightly.
 
