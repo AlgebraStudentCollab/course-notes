@@ -49,9 +49,7 @@ private static Elvis instance;
     public static Elvis getInstance() {
         if (instance == null) {
             synchronized (Elvis.class) {
-                if (instance == null) {
-                    instance = new Elvis();
-                }
+                instance = new Elvis();
             }
         }
         return instance;
@@ -60,10 +58,8 @@ private static Elvis instance;
 
 ```java
 public static Elvis getInstance() {
-        synchronized (Elvis.class) {
-            if (instance == null) {
-                instance = new Elvis();
-            }
+        if (instance == null) {
+            instance = new Elvis();
         }
         return instance;
     }
