@@ -34,8 +34,8 @@ private static Elvis instance;
 private static Elvis instance;
 
     public static Elvis getInstance() {
-        if (instance == null) {
-            synchronized (Elvis.class) {
+	    synchronized (Elvis.class) {
+            if (instance == null) {
                instance = new Elvis();   
             }
         }
