@@ -12,4 +12,4 @@ override fun getView(position: Int, convertView: View?, parent: ViewGroup): View
 
 
 - position - item position
-- 
+- convertView - cached view
