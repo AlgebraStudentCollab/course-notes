@@ -1,0 +1,21 @@
+## Oglasnik - user stories
+- 1.1 Registracija korisnika
+	- 5pt
+- 1.2 - Prijava korisnika
+	- 3pt
+- 1.3 - Uplata članarine
+	- 13pt
+- 1.4 - Objava oglasa
+	- 8pt
+- 2 - Pregled oglasa (kao korisnik želim pregledavati objavljene oglase da bi pronašao uslugu/robu ili procijenio tržište)
+	- 20pt
+- 3 - Uređivanje oglasa
+	- 8pt
+- 5.1 - Uređivanje (korisničkih) podataka
+	- 8pt
+- 5.2 - Uplata članarine (2 - prilikom uređivanja profila)
+	- 3pt
+- 6 - Upravljanje oglasima (kao administrator želim upravljati oglasima)
+	- 3pt
+- 7 - Upravljanje korisnicima (kao administrator želim upravljati korsničkim računima)
+	- 8pt
