@@ -18,3 +18,6 @@ Field[] allFields = c.getDeclaredFields();
 The method `getFields()` returns only public fields,
 while `getDeclaredFields()` method returns _all_ fields declared in the class.
 
+## Modifiers
+```java
+(Fiield)
