@@ -3,7 +3,7 @@
 ## Class
 Storing a class in a `Class` object
 ```java
-Class c = Class.forName(classname);
+Class clazz = Class.forName(classname);
 ```
 
 The `forName()` method requires the class' fully qualified name (eg. `hr.algebra.Main`)
@@ -11,8 +11,8 @@ The `forName()` method requires the class' fully qualified name (eg. `hr.algebra
 ## Fields
 Accessing a class' fields via the `Class` object
 ```java
-Field[] publicFields = c.getFields();
-Field[] allFields = c.getDeclaredFields();
+Field[] publicFields = clazz.getFields();
+Field[] allFields = clazz.getDeclaredFields();
 
 Field field = allFields[0];
 ```
@@ -43,3 +43,14 @@ Boolean isEnumConstant = field.isEnumConstant();
 ```
 
 The method returns `true` if the field represents an element of an enumerated type.
+Enums have a special field dubbed `$VALUES`.
+
+## Methods
+```java
+Method[] publicMethods = clazz.getMethods();
+Method[] allMethods = clazz.getDeclaredMethods();
+```
+
+Same logic as in [[#Fields]].
+
+``
