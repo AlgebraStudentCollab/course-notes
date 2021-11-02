@@ -65,3 +65,13 @@ String parameterName = parameter.getName();
 String parameterType = parameter.getType().getName();
 ```
 
+### Constructors
+```java
+Constructor[] constructors = clazz.getConstructors();
+
+Constructor constructor = constructors[0];
+
+constructor.getModifiers();
+consturctor.getParameters();
+consturctor. 
+```
