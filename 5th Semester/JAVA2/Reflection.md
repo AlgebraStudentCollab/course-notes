@@ -6,7 +6,7 @@ Storing a class in a `Class` object
 Class c = Class.forName(classname);
 ```
 
-The `forName()` method requires the class' fully qualified name (eg. `hr.al;`)
+The `forName()` method requires the class' fully qualified name (eg. `hr.algebra.Main`)
 
 ## Fields
 Accessing a class' fields via the `Class` object
