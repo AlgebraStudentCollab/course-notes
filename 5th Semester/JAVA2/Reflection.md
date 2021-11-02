@@ -49,8 +49,19 @@ Enums have a special field dubbed `$VALUES`.
 ```java
 Method[] publicMethods = clazz.getMethods();
 Method[] allMethods = clazz.getDeclaredMethods();
+
+Method method = allMethods[0];
 ```
 
 Same logic as in [[#Fields]].
 
-``
+### Parameters
+```java
+Parameter[] parameters = method.getParameters();
+
+Parameter parameter = parameters[0];
+
+String parameterName = parameter.getName();
+String parameterType = parameter.getType().getName();
+```
+
