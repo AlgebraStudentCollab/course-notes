@@ -71,7 +71,8 @@ Constructor[] constructors = clazz.getConstructors();
 
 Constructor constructor = constructors[0];
 
-constructor.getModifiers();
-consturctor.getParameters();
-consturctor. 
+int modifiers = constructor.getModifiers();
+Parameter[] parameters = consturctor.getParameters();
+String constructorName = consturctor. getName();
 ```
+
