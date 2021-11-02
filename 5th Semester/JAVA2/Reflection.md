@@ -36,3 +36,10 @@ Modifier.isPrivate(modifier);
 ```
 
 The `Modifier` class has several static helper methods which return Booelan values representing the specified modifier.
+
+## Enumeration
+```java
+Boolean isEnumConstant = field.isEnumConstant();
+```
+
+The method returns `true` if the field represents an element of an enumerated type.
