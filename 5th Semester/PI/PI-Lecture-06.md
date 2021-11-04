@@ -1,0 +1,2 @@
+# UML
+Sustav != Aktor
