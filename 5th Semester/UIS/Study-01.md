@@ -72,7 +72,7 @@ Poslovni sustav zadužen je za održavanje i korištenje informacijskog sustava.
 
 ## Što je upravljanje informacijskim sustavom?
 Upravljanje informacijskim sustavom daje smjernice za optimalno iskorištavanje resursa, odgovarajuće upravljanje rizicima i sigurnost da informacijski sustav podupire ciljeve poduzeća kao cjeline. Važno e za očuvanje sigurnosti, pouzdanosti i cjelovitosti strateških informacija te za upravljanje ključnominformacijskom imovinom.
-![[proces2.png]]
+![[upravljanje informacijskim sustavom.png]]
 
 ## Što je imovina/resurs/sposobnost?
 - imovina
@@ -129,4 +129,4 @@ Upravljanje informacijskim sustavom daje smjernice za optimalno iskorištavanje 
 
 ## Skicirajte i objasnite proces.
 ![[proces.png]]
-![[Pasted image 20211103154723.png]]
+![[proces2.png]]
