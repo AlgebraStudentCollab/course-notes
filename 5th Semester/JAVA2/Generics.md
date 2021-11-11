@@ -1,5 +1,7 @@
 # Generics
-Generics offer compile time safety
+Generics offer compile time safety.
 # \<T>
-Compile time takes any tipe
+T is a standin for whichever type is used in code.
 # \<?>
+? means that the object will be typed, to a class, but isn't defined yet.
+An untyped object may accent any object type, while 
