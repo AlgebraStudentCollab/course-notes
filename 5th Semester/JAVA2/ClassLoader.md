@@ -1,10 +1,11 @@
-ClassLoaders write class
-- Bootstrap ClassLoader
+# ClassLoader
+loads classes into the JVM
+1. Bootstrap ClassLoader
 	- Written natively in C
 	- Loaded directly by the JVM
-- Extension (Platform) ClassLoader
+2. Extension (Platform) ClassLoader
 	- Loads classes defined in `java.ext.dirs` (`$JAVA_HOME/jre/lib/ext`)
 	- Bootstrap is the parent
-- Application (System) ClassLoader
+3. Application (System) ClassLoader
 	- Loads classes defined in the classpath
 	- Platform is the parent
