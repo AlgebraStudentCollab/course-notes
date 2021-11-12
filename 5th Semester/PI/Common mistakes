@@ -1,0 +1,12 @@
+Use case dijagram
+- pogresni aktori
+- granice sustava (pravokutnik)
+- fali naslov (unutar pravokutnika)
+- krive strelice za include i extend
+- ne prepoznavanje generalizacije
+Sekvencijski dijagram
+- sinkrone i asinkrone poruke
+- ne prepoznavanje blokova
+- ne navođenje svih entiteta
+- treba izgledati kao poziv metode
+- povratne poruke su opcionalne
