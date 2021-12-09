@@ -16,30 +16,20 @@ try (DatagramSocket serverSocket = new DatagramSocket()) {
 ### Client
 ```java
 try (MulticastSocket clientSocket = new MulticastSocket(Server.PORT)) {
-
-  
-
- InetAddress groupAddress = InetAddress.getByName(Server.GROUP);
-
- System.err.println("Client joining:" + getName());
-
- clientSocket.joinGroup(groupAddress);
-
-  
-
- for (int j = 0; j < 3; j++) {
-
- byte[] buffer = new byte[64];
-
- DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-
- clientSocket.receive(packet);
-String message = new String(packet.getData(), 0, packet.getLength());
-System.out.println(message);
-}
-System.err.println("Client left:" + getName());
-clientSocket.leaveGroup(groupAddress);
-} catch (IOException ex) {
+	InetAddress groupAddress = InetAddress.getByName(Server.GROUP);
+	System.err.println("Client joining:" + getName());
+	clientSocket.joinGroup(groupAddress);
+	for (int j = 0; j < 3; j++) { // read 3 messages before leaving the group
+		byte[] buffer = new byte[64]; // create a bytebuffer to store the message in
+		DatagramPacket packet = new DatagramPacket(buffer, buffer.length); // wrap it in a datagrampacket
+		clientSocket.receive(packet); // wait for new messages
+		String message = new String(packet.getData(), 0, packet.getLength()); // 
+		System.out.println(message);
+	}
+	System.err.println("Client left:" + getName());
+	clientSocket.leaveGroup(groupAddress);
+} catch ( ... ) {
+	...
 }
  ```
 
