@@ -29,20 +29,20 @@ try (MulticastSocket clientSocket = new MulticastSocket(Server.PORT)) {
 #### Sending
 ```java
 String message = ...
-		byte[] buffer = message.getBytes();
-		InetAddress groupAddress = InetAddress.getByName(GROUP);
-		DatagramPacket packet = new DatagramPacket(buffer, buffer.length, groupAddress, PORT);
-		serverSocket.send(packet);
+byte[] buffer = message.getBytes();
+InetAddress groupAddress = InetAddress.getByName(GROUP);
+DatagramPacket packet = new DatagramPacket(buffer, buffer.length, groupAddress, PORT);
+serverSocket.send(packet);
 ```
 #### Receiving
 ```java
 for (int j = 0; j < 3; j++) { // read 3 messages before leaving the group
-		byte[] buffer = new byte[64]; // create a bytebuffer to store the message in
-		DatagramPacket packet = new DatagramPacket(buffer, buffer.length); // wrap it in a datagrampacket
-		clientSocket.receive(packet); // wait for new messages
-		String message = new String(packet.getData(), 0, packet.getLength()); // 
-		System.out.println(message);
-	}
+	byte[] buffer = new byte[64]; // create a bytebuffer to store the message in
+	DatagramPacket packet = new DatagramPacket(buffer, buffer.length); // wrap it in a datagrampacket
+	clientSocket.receive(packet); // wait for new messages
+	String message = new String(packet.getData(), 0, packet.getLength()); // 
+	System.out.println(message);
+}
 ```
 ### Constants
 ```java
