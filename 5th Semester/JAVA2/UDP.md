@@ -2,11 +2,7 @@
 ```java
 try (DatagramSocket serverSocket = new DatagramSocket()) {
 	while (true) {
-		String message = ...
-		byte[] buffer = message.getBytes();
-		InetAddress groupAddress = InetAddress.getByName(GROUP);
-		DatagramPacket packet = new DatagramPacket(buffer, buffer.length, groupAddress, PORT);
-		serverSocket.send(packet);
+		// do something with the serverSocket
 	}
 } catch ( ... ) {
 	...
@@ -31,7 +27,14 @@ try (MulticastSocket clientSocket = new MulticastSocket(Server.PORT)) {
 
 ### Sending and receiving data
 #### Sending
-#### 
+```java
+String message = ...
+		byte[] buffer = message.getBytes();
+		InetAddress groupAddress = InetAddress.getByName(GROUP);
+		DatagramPacket packet = new DatagramPacket(buffer, buffer.length, groupAddress, PORT);
+		serverSocket.send(packet);
+```
+#### Receiving
 ```java
 for (int j = 0; j < 3; j++) { // read 3 messages before leaving the group
 		byte[] buffer = new byte[64]; // create a bytebuffer to store the message in
