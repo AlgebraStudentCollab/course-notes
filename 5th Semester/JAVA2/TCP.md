@@ -38,3 +38,9 @@ ObjectInputStream ois = new ObjectInputStream(clientSocket.getInputStream());
 dis.readUTF( ... );
 ois.readObject( ... );
  ```
+ 
+ ### Constants
+ ```java
+public static final int PORT = 12345;
+public static final String HOST = "localhost";
+ ```
