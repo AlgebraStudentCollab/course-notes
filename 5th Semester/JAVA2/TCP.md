@@ -23,16 +23,17 @@ try (Socket clientSocket = new Socket(Server.HOST, Server.PORT)) {
 ```
 
 ### Sending and receiving data
+#### Sending
 ```java
-DataInputStream dis = new DataInputStream(clientSocket.getInputStream());
 DataOutputStream dos = new DataOutputStream(clientSocket.getOutputStream());
+ObjectOutputStream oos = new ObjectOutputStream(clientSocket.getOutputStream());
 
 dos.writeUTF( ... )
 oos.writeObject( ... )
-
-...
-
-ObjectOutputStream oos = new ObjectOutputStream(clientSocket.getOutputStream());
+```
+#### Receiving
+```java
+DataInputStream dis = new DataInputStream(clientSocket.getInputStream());
 ObjectInputStream ois = new ObjectInputStream(clientSocket.getInputStream());
 
 dis.readUTF( ... );
