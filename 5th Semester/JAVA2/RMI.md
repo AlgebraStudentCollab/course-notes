@@ -1,3 +1,5 @@
+# RMI
+Implemented using [[JNDI]]
 ## Service
 Any RMI service must extend `Remote` and all methods must throw `RemoteException`
 ```java
