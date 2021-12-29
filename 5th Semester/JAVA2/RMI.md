@@ -3,6 +3,7 @@
 - Implementation of RPC in Java
 ## Service (Contract)
 Any RMI service must extend `Remote` and all methods must throw `RemoteException`
+
 ```java
 public interface RemoteService extends Remote {
 	String REMOT_OBJECT_NAME = "hr.algebra.rmi.remoteservice";
@@ -12,18 +13,43 @@ public interface RemoteService extends Remote {
 ```
 
 We need to know the exact class of any service that we want to access through RMI
+
 ```java
 String REMOT_OBJECT_NAME = "hr.algebra.rmi.remoteservice";
 ```
 
 All methods need to throw `RemoteException`'s due to the possibilty of failing the check
 
+## Implementation
+Serverside implementation of the contract, code execution happens on the JVM that exposes an instance of this object.
+
+All data will be seria
+```java
+public class RemoteServiceImpl implements RemoteService {
+
+    @Override
+    public int countConsonants(String sentence) throws RemoteException {
+        return sentence
+                .replace("[^a-zA-Z]", "")
+                .replace("[^aeiou]", "")
+                .length();
+    }
+
+    @Override
+    public String swapCharacters(String sentence, char oldChar, char newChar) throws RemoteException {
+        return sentence.replace(oldChar, newChar);
+    }
+
+}
+```
+
 ## Server
-``
 ```java
 public class RMIServer {
 
+	// Port on which the JVM exposes the registry that hosts an instance of this class
     private static final int RMI_PORT = 1099;
+	// Notifies the JNDI API not to use dynamically assigned ports for replies
     private static final int RANDOM_PORT_HINT = 0;
 
     public static void main(String[] args) {
@@ -43,3 +69,5 @@ public class RMIServer {
     }
 }
 ```
+
+## Client
