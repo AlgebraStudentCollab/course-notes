@@ -1,6 +1,6 @@
 # RMI
 Implemented using [[JNDI]]
-## Service
+## Service (Contract)
 Any RMI service must extend `Remote` and all methods must throw `RemoteException`
 ```java
 public interface RemoteService extends Remote {
@@ -10,3 +10,9 @@ public interface RemoteService extends Remote {
 }
 ```
 
+We need to know the exact class of any service that we want to access through RMI
+```java
+String REMOT_OBJECT_NAME = "hr.algebra.rmi.remoteservice";
+```
+
+All method 
