@@ -1,5 +1,6 @@
 # RMI
-Implemented using [[JNDI]]
+- Invocation of a method on a remote JVM over [[JNDI]]
+- Implementation of RPC in Java
 ## Service (Contract)
 Any RMI service must extend `Remote` and all methods must throw `RemoteException`
 ```java
@@ -15,4 +16,30 @@ We need to know the exact class of any service that we want to access through RM
 String REMOT_OBJECT_NAME = "hr.algebra.rmi.remoteservice";
 ```
 
-All method 
+All methods need to throw `RemoteException`'s due to the possibilty of failing the check
+
+## Server
+``
+```java
+public class RMIServer {
+
+    private static final int RMI_PORT = 1099;
+    private static final int RANDOM_PORT_HINT = 0;
+
+    public static void main(String[] args) {
+        try {
+            // Exposes JVM to port: RMI_PORT
+            Registry registry = LocateRegistry.createRegistry(RMI_PORT);
+            // Instance of remotely available class
+            RemoteService service = new RemoteServiceImpl();
+            // Instance of skeleton that will deserialize remote data and call the intended method
+            RemoteService skeleton = (RemoteService) UnicastRemoteObject.exportObject(service, RANDOM_PORT_HINT);
+            System.err.println("Object registered in RMI Registry");
+            // routes any calls to REMOTE_OBJECT_NAME to the skeleton
+            registry.rebind(RemoteService.REMOTE_OBJECT_NAME, skeleton);
+        } catch (RemoteException ex) {
+            Logger.getLogger(RMIServer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
+```
