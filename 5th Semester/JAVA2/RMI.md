@@ -79,7 +79,9 @@ public class RMIClient {
         try {
 			// Locates the required registry on the hostname "localhost", on port 1099
             Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+			// The Stub forwards all requests bound for the RemoteService instance trough to the remote JVM
             RemoteService stub = (RemoteService) registry.lookup(RemoteService.REMOTE_OBJECT_NAME);
+			// Simple method to demonstrate the service in action
             handleRemoteCalls(stub);
 
         } catch (RemoteException ex) {
