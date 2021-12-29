@@ -23,7 +23,8 @@ All methods need to throw `RemoteException`'s due to the possibilty of failing t
 ## Implementation
 Serverside implementation of the contract, code execution happens on the JVM that exposes an instance of this object.
 
-All data will be seria
+All data will be serialized for transport between JVMs, method parameters and return type should also be `Serializable` to allow for data transfer.
+
 ```java
 public class RemoteServiceImpl implements RemoteService {
 
@@ -71,3 +72,38 @@ public class RMIServer {
 ```
 
 ## Client
+```java
+public class RMIClient {
+
+    public static void main(String[] args) {
+        try {
+			// Locates the required registry on the hostname "localhost", on port 1099
+            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+            RemoteService stub = (RemoteService) registry.lookup(RemoteService.REMOTE_OBJECT_NAME);
+            handleRemoteCalls(stub);
+
+        } catch (RemoteException ex) {
+            Logger.getLogger(RMIClient.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NotBoundException ex) {
+            Logger.getLogger(RMIClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+	// Example use
+    private static void handleRemoteCalls(RemoteService remoteService) throws RemoteException {
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.println("Insert sentence: ");
+            final String sentence = scanner.nextLine();
+            int consonants = remoteService.countConsonants(sentence);
+            System.out.println("Number of consonants: " + consonants);
+            System.out.println("Character to change: ");
+            char oldChar = scanner.next().charAt(0);
+            System.out.println("Character to change to: ");
+            char newChar = scanner.next().charAt(0);
+            System.out.println("Sentece: " + remoteService.swapCharacters(sentence, oldChar, newChar));
+        } catch (RemoteException ex) {
+            Logger.getLogger(RMIClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+}
+```
