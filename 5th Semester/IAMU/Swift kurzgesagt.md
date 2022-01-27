@@ -489,3 +489,45 @@ struct CircleImage_Previews: PreviewProvider {
     }
 }
 ```
+
+```swift
+import SwiftUI
+
+struct MapView: View {
+    var coordinate: CLLocationCoordinate2D
+    @State private var region = MKCoordinateRegion()
+
+    var body: some View {
+        Map(coordinateRegion: $region)
+            .onAppear {
+                setRegion(coordinate)
+            }
+    }
+
+    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
+        region = MKCoordinateRegion(
+            center: coordinate,
+            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+        )
+    }
+}
+```
+
+```swift
+import SwiftUI
+
+struct LandmarkRow: View {
+    var landmark: Landmark
+
+    var body: some View {
+        HStack {
+            landmark.image
+                .resizable()
+                .frame(width: 50, height: 50)
+            Text(landmark.name)
+
+            Spacer()
+        }
+    }
+}
+```
