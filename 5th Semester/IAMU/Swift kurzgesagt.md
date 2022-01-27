@@ -36,6 +36,23 @@ let implicitInteger = 70
 let implicitDouble = 70.0
 let explicitDouble: Double = 70
 ```
+
+optionals and optional unwrapping
+```swift
+var surveyAnswer: String?
+
+if convertedNumber != nil {
+    print("convertedNumber has an integer value of \(convertedNumber!).")
+}
+
+let possibleNumber: Int? = maybeThisFunctionReturnsAValue()
+if let actualNumber = possibleNumber {
+	actualNumber
+}
+
+
+```
+
 #### implicit conversion
 ```swift
 let label = "The width is "
