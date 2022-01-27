@@ -64,7 +64,6 @@ if let firstNumber = Int("4") {
         }
     }
 }
-
 ```
 
 #### implicit conversion
