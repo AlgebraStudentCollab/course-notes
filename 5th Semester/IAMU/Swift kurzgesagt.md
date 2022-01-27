@@ -408,7 +408,11 @@ do {
     print(error)
 }
 
+let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
+```
 
+multicatch
+```swift
 do {
     let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
     print(printerResponse)
@@ -419,8 +423,6 @@ do {
 } catch {
     print(error)
 }
-
-let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
 ```
 
 finally -> defer
