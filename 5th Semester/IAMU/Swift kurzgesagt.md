@@ -357,6 +357,7 @@ protocol ExampleProtocol {
 }
 
 class SimpleClass: ExampleProtocol {
+	static var TypeDescription = "Simple class"
     var simpleDescription: String = "A very simple class."
     var anotherProperty: Int = 69105
     func adjust() {
@@ -368,12 +369,15 @@ a.adjust()
 let aDescription = a.simpleDescription
 
 struct SimpleStructure: ExampleProtocol {
+	static let TypeDescription = "Simple struct"
     var simpleDescription: String = "A simple structure"
     mutating func adjust() {
         simpleDescription += " (adjusted)"
     }
 }
 ```
+
+```swif
 
 errors
 ```swift
