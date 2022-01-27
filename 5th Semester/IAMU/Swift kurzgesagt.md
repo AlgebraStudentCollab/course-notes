@@ -10,3 +10,6 @@ Android runtime|Objective C runtime
 - Optionals ensure that nil values are handled explicitly.
 - Memory is managed automatically.
 - Error handling allows controlled recovery from unexpected failures.
+
+#### quote
+_"Its combination of safety and speed make Swift an excellent choice for everything from “Hello, world!” to an entire operating system."_
