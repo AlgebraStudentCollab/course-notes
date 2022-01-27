@@ -472,26 +472,20 @@ declarative
 ```swift
 import SwiftUI
 
-struct ContentView: View {
+struct CircleImage: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Turtle Rock")
-                .font(.title)
-            HStack {
-                Text("Joshua Tree National Park")
-                    .font(.subheadline)
-                Spacer()
-                Text("California")
-                    .font(.subheadline)
+        Image("turtlerock")
+            .clipShape(Circle())
+            .overlay {
+                Circle().stroke(.white, lineWidth: 4)
             }
-        }
-        .padding()
+            .shadow(radius: 7)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        CircleImage()
     }
 }
 ```
