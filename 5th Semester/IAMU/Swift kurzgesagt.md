@@ -197,11 +197,6 @@ class NamedShape {
 		self.name = name
 	}
 
-	init? (from name: String?) {
-		guard let name = name else { return nil }
-
-	}
-
 	deinit() {
 		print("goodbye ~")
 	}
@@ -279,5 +274,27 @@ enum Rank: Int {
 }
 let ace = Rank.ace
 let aceRawValue = ace.rawValue
+```
 
+#### structs
+always passed by copy
+```swift
+struct Card {
+	var rank: Rank
+	var suit: Suit
+	func simpleDescription() -> String {
+		return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+	}
+}
+let threeOfSpades = Card(rank: .three, suit: .spades)
+let threeOfSpadesDescription = threeOfSpades.simpleDescription()
+```
+
+#### protocols & extensions
+```swift
+protocol ExampleProtocol {
+	static var TypeDescription: String { get }
+	var simpleDescription: String { get }
+	mutating func adjust()
+}
 ```
