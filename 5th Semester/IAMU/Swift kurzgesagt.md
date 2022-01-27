@@ -16,7 +16,38 @@ _"Its combination of safety and speed make Swift an excellent choice for everyth
 
 
 ### Basic stuff
-#### `var` vs le
-1.  var myVariable = 42
-2.  myVariable = 50
-3.  let myConstant = 42
+#### var vs let
+```swift
+var myVariable = 42
+myVariable = 50
+let myConstant = 42
+```
+#### typing
+```swift
+let implicitInteger = 70
+let implicitDouble = 70.0
+let explicitDouble: Double = 70
+```
+#### implicit conversion
+```swift
+let label = "The width is "
+let width = 94
+let widthLabel = label + String(width)
+```
+#### string interpolation
+```swift
+let apples = 3
+let oranges = 5
+let appleSummary = "I have \(apples) apples."
+let fruitSummary = "I have \(apples + oranges) pieces of fruit."
+```
+#### arrays and dictionaries
+```swift
+var shoppingList = ["catfish", "water", "tulips"]
+shoppingList[1] = "bottle of water"
+var occupations = [
+    "Malcolm": "Captain",
+    "Kaylee": "Mechanic",
+]
+occupations["Jayne"] = "Public Relations"
+```
