@@ -473,8 +473,10 @@ declarative
 import SwiftUI
 
 struct CircleImage: View {
+	var image: Image
+	
     var body: some View {
-        Image("turtlerock")
+        image
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.white, lineWidth: 4)
@@ -590,4 +592,18 @@ struct LandmarkList: View {
     }
 }
 
+```
+
+
+```swift
+import SwiftUI
+
+@main
+struct LandmarksApp: App {
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+}
 ```
