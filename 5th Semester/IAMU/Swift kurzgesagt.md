@@ -187,7 +187,8 @@ var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
 ```
-constructors (initializers)
+
+constructors -> initializers
 ```swift
 class NamedShape {
 	var numberOfSides: Int = 0
@@ -351,4 +352,28 @@ do {
 } catch {
     print(error)
 }
+
+let printerFailure = try? send(job: 1885, toPrinter: "Never Has Toner")
 ```
+
+finally -> defer
+```swift
+var fridgeIsOpen = false
+let fridgeContent = ["milk", "eggs", "leftovers"]
+
+func fridgeContains(_ food: String) -> Bool {
+	fridgeIsOpen = true
+	defer {
+		fridgeIsOpen = false
+	}
+
+	let result = fridgeContent.contains(food)
+	return result
+}
+fridgeContains("banana")
+print(fridgeIsOpen)
+// Prints "false"
+```
+
+#### generics
+```swif```
