@@ -121,9 +121,16 @@ print(statistics.2)
 #### fuctions as first class citizens 
 as return parameter
 ```swift
-
+func makeIncrementer() -> ((Int) -> Int) {
+	 func addOne(number: Int) -> Int {
+		 return 1 + number
+	 }
+	 return addOne
+}
+var increment = makeIncrementer()
+increment(7)
 ```
-
+as input parameter
 ```swift
 func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
 	 for item in list {
@@ -139,4 +146,15 @@ func lessThanTen(number: Int) -> Bool {
 }
 var numbers = [20, 19, 7, 12]
 hasAnyMatches(list: numbers, condition: lessThanTen)
+```
+
+#### closures
+```swift
+numbers.map({ (number: Int) -> Int in
+	let result = 3 * number
+	return result
+})
+```
+```swift
+numbers.map({ number in 3 * number })
 ```
