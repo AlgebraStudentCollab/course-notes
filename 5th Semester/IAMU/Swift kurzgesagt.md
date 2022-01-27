@@ -197,6 +197,11 @@ class NamedShape {
 		self.name = name
 	}
 
+	init? (from name: String?) {
+		guard let name = name else { return nil }
+
+	}
+
 	deinit() {
 		print("goodbye ~")
 	}
@@ -228,4 +233,51 @@ var perimeter: Double {
 		sideLength = newValue / 3.0
 	}
 }
+```
+
+on set / after set events
+```swift
+var triangle: EquilateralTriangle {
+	willSet {
+		square.sideLength = newValue.sideLength
+	}
+}
+var square: Square {
+	willSet {
+		triangle.sideLength = newValue.sideLength
+	}
+}
+
+var name: String {
+	didSet {
+		print("i just changed my name to \(newValue)")
+	}
+}
+```
+
+#### enumeration
+```swift
+enum Rank: Int {
+	case ace = 1
+	case two, three, four, five, six, seven, eight, nine, ten
+	case jack, queen, king
+
+	func simpleDescription() -> String {
+		switch self {
+		case .ace:
+			return "ace"
+		case .jack:
+			return "jack"
+		case .queen:
+			return "queen"
+		case .king:
+			return "king"
+		default:
+			return String(self.rawValue)
+		}
+	}
+}
+let ace = Rank.ace
+let aceRawValue = ace.rawValue
+
 ```
