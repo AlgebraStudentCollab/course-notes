@@ -550,30 +550,37 @@ struct LandmarkDetail: View {
                 .offset(y: -130)
                 .padding(.bottom, -130)
 
-            VStack(alignment: .leading) {
-                Text(landmark.name)
-                    .font(.title)
-
-                HStack {
-                    Text(landmark.park)
-                    Spacer()
-                    Text(landmark.state)
-                }
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-
-                Divider()
-
-                Text("About \(landmark.name)")
-                    .font(.title2)
-                Text(landmark.description)
-            }
-            .padding()
+            text
         }
         .navigationTitle(landmark.name)
         .navigationBarTitleDisplayMode(.inline)
     }
+	var text ...
 }
+```
+
+```swift
+var text: some View {
+	VStack(alignment: .leading) {
+		Text(landmark.name)
+			.font(.title)
+
+		HStack {
+			Text(landmark.park)
+			Spacer()
+			Text(landmark.state)
+		}
+		.font(.subheadline)
+		.foregroundColor(.secondary)
+
+		Divider()
+
+		Text("About \(landmark.name)")
+			.font(.title2)
+		Text(landmark.description)
+	}
+}
+.padding()
 ```
 
 ```swift
