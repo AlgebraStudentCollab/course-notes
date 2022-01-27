@@ -297,4 +297,58 @@ protocol ExampleProtocol {
 	var simpleDescription: String { get }
 	mutating func adjust()
 }
+
+class SimpleClass: ExampleProtocol {
+    var simpleDescription: String = "A very simple class."
+    var anotherProperty: Int = 69105
+    func adjust() {
+        simpleDescription += "  Now 100% adjusted."
+    }
+}
+var a = SimpleClass()
+a.adjust()
+let aDescription = a.simpleDescription
+
+struct SimpleStructure: ExampleProtocol {
+    var simpleDescription: String = "A simple structure"
+    mutating func adjust() {
+        simpleDescription += " (adjusted)"
+    }
+}
+```
+
+errors
+```swift
+enum PrinterError: Error {
+	case outOfPaper
+	case noToner
+	case onFire
+}
+
+
+func send(job: Int, toPrinter printerName: String) throws -> String {
+	if printerName == "Never Has Toner" {
+		throw PrinterError.noToner
+	}
+	return "Job sent"
+}
+
+do {
+    let printerResponse = try send(job: 1040, toPrinter: "Bi Sheng")
+    print(printerResponse)
+} catch {
+    print(error)
+}
+
+
+do {
+    let printerResponse = try send(job: 1440, toPrinter: "Gutenberg")
+    print(printerResponse)
+} catch PrinterError.onFire {
+    print("I'll just put this over here, with the rest of the fire.")
+} catch let printerError as PrinterError {
+    print("Printer error: \(printerError).")
+} catch {
+    print(error)
+}
 ```
