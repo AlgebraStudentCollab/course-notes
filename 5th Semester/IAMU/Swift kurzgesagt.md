@@ -1,19 +1,12 @@
-Android apps | iOS apps
----|---
-Run on the Dalvik VM|Compile to native machine code
-Android runtime|Objective C runtime
-
-#### quote
-_"Its combination of safety and speed make Swift an excellent choice for everything from “Hello, world!” to an entire operating system."_
-
-### Swift
-
+## Swift
 - clarity
 - brevity as a side effect
 - Names of types and protocols are `UpperCamelCase`. Everything else is `lowerCamelCase`.
 - function variable names
 - Code written at global scope is used as the entry point for the program, so you don’t need a `main()` function.
 
+#### quote
+_"Its combination of safety and speed make Swift an excellent choice for everything from “Hello, world!” to an entire operating system."_
 
 ### Basic stuff
 #### var vs let
@@ -472,4 +465,13 @@ func anyCommonElements<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool
 }
 
 anyCommonElements([1, 2, 3], [3])
+```
+
+### swiftui
+declarative
+```swift
+import SwiftUI
+
+struct Content : View {
+}
 ```
