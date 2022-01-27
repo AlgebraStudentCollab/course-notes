@@ -377,7 +377,13 @@ struct SimpleStructure: ExampleProtocol {
 }
 ```
 
-```swif
+```swift
+extension Array where Element == SomeStruct {
+	func onDay(_ day: Date) -> [SomeStruct] {
+		self.filter { $0.datum == day.day }
+	}
+}
+```
 
 errors
 ```swift
