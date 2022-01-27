@@ -150,11 +150,55 @@ hasAnyMatches(list: numbers, condition: lessThanTen)
 
 #### closures
 ```swift
-numbers.map({ (number: Int) -> Int in
-	let result = 3 * number
-	return result
+let numbers = [20, 19, 12, 7]
+
+let mappedNumbers = numbers.map({ (number: Int) -> Int in
+	 let result = 3 * number
+	 return result
 })
+print(mappedNumbers)
+  
+let mappedNumbers2 = numbers.map({ number in 3 * number })
+print(mappedNumbers2)
+  
+let mappedNumbers3 = numbers.map { number in 3 * number }
+print(mappedNumbers3)
+  
+let mappedNumbers4 = numbers.map { 3 * $0 }
+print(mappedNumbers4)
+
+// Prints
+// [60, 57, 36, 21]
+// [60, 57, 36, 21]
+// [60, 57, 36, 21]
+// [60, 57, 36, 21]
 ```
+
+#### objects and classes
 ```swift
-numbers.map({ number in 3 * number })
+class Shape {
+	var numberOfSides = 0
+	func simpleDescription() -> String {
+		return "A shape with \(numberOfSides) sides."
+	}
+}
+
+var shape = Shape()
+shape.numberOfSides = 7
+var shapeDescription = shape.simpleDescription()
+```
+constructors (nitializers)
+```swift
+class NamedShape {
+	var numberOfSides: Int = 0
+	var name: String
+
+	init(name: String) {
+		self.name = name
+	}
+
+	func simpleDescription() -> String {
+		return "A shape with \(numberOfSides) sides."
+	}
+}
 ```
