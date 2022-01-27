@@ -76,19 +76,67 @@ print(largest)
 // Prints "25"
 ```
 
-#### functions
-with external variable names
+####  declaring functions
+single set of parameter names
 ```swift
 func greet(person: String, day: String) -> String {
     return "Hello \(person), today is \(day)."
 }
 greet(person: "Bob", day: "Tuesday")
 ```
-without 
+internal and external parameter names
 ```swift
 func greet(_ person: String, on day: String) -> String {
     return "Hello \(person), today is \(day)."
 }
 greet("John", on: "Wednesday")
 
+```
+
+#### tuples
+```swift
+func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
+    var min = scores[0]
+    var max = scores[0]
+    var sum = 0
+
+    for score in scores {
+        if score > max {
+            max = score
+        } else if score < min {
+            min = score
+        }
+        sum += score
+    }
+
+    return (min, max, sum)
+}
+let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
+print(statistics.sum)
+// Prints "120"
+print(statistics.2)
+// Prints "120"
+```
+
+#### fuctions as first class citizens 
+as return parameter
+```swift
+
+```
+
+```swift
+func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+	 for item in list {
+		 if condition(item) {
+			 return true
+		 }
+	 }
+	 return false
+}
+
+func lessThanTen(number: Int) -> Bool {
+	 return number < 10
+}
+var numbers = [20, 19, 7, 12]
+hasAnyMatches(list: numbers, condition: lessThanTen)
 ```
