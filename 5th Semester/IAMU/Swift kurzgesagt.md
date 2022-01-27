@@ -22,6 +22,14 @@ var myVariable = 42
 myVariable = 50
 let myConstant = 42
 ```
+
+naming
+```swift
+let π = 3.14159
+let 你好 = "你好世界"
+let 🐶🐮 = "dogcow"
+```
+
 #### typing
 ```swift
 let implicitInteger = 70
@@ -376,4 +384,31 @@ print(fridgeIsOpen)
 ```
 
 #### generics
-```swif```
+```swift
+func makeArray<Item>(repeating item: Item, numberOfTimes: Int) -> [Item] {
+	var result: [Item] = []
+	for _ in 0..<numberOfTimes {
+		result.append(item)
+	}
+	return result
+}
+makeArray(repeating: "knock", numberOfTimes: 4)
+```
+
+requirements
+```swift
+func anyCommonElements<T: Sequence, U: Sequence>(_ lhs: T, _ rhs: U) -> Bool
+    where T.Element: Equatable, T.Element == U.Element
+{
+    for lhsItem in lhs {
+        for rhsItem in rhs {
+            if lhsItem == rhsItem {
+                return true
+            }
+        }
+    }
+    return false
+}
+
+anyCommonElements([1, 2, 3], [3])
+```
