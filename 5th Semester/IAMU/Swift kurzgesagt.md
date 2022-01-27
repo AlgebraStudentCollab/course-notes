@@ -187,7 +187,7 @@ var shape = Shape()
 shape.numberOfSides = 7
 var shapeDescription = shape.simpleDescription()
 ```
-constructors (nitializers)
+constructors (initializers)
 ```swift
 class NamedShape {
 	var numberOfSides: Int = 0
@@ -197,8 +197,35 @@ class NamedShape {
 		self.name = name
 	}
 
+	deinit() {
+		print("goodbye ~")
+	}
+
 	func simpleDescription() -> String {
 		return "A shape with \(numberOfSides) sides."
+	}
+}
+```
+
+Every property needs a value assigned—either in its declaration (as with `numberOfSides`) or in the initializer (as with `name`).
+
+override detection @ compile time
+```swift
+override func simpleDescription() -> String {
+	return "A square with sides of length \(sideLength)."
+}
+```
+
+getters setters
+```swift
+var sideLength: Double = 0.0
+
+var perimeter: Double {
+	get {
+		return 3.0 * sideLength
+	}
+	set {
+		sideLength = newValue / 3.0
 	}
 }
 ```
