@@ -5,11 +5,11 @@ it is for that reason that i started this company
 
 the settlements that grew into the first cities had wide roads, to accomodate for large ammounts of foot traffic, next to hoofed traffic and later horse drawn carriages and it was all very much unregulated
 
-when cars came along the city officials realized that cities should adapt more to cars, centuries later and the seeds they sew grew into 
+when cars came along the city officials realized that cities should adapt more to cars, centuries later and the seeds they sew grew into the urban hellscapes that most of us currently alive inhabit
 
 the cities of the past changed and adapted to new technologies as they appeared, it is our goal to build the cities of the future
 
-
+carbon neutral, 
 
 Email deserves to die,
 don't get me wrong, it has served us well, but it's high time for it to go
